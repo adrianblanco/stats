@@ -22,7 +22,7 @@ Anyone can *steal* the code in order to build his/her own model or take it as a 
 
 #### Story:
 
-The results were published in this analysis of the election at Spanish online newspaper El Confidencial.
+The results were published in this analysis of the election at Spanish online newspaper El Confidencial (in Spanish):
 
 [La ilusión cambió de bando: la movilización de los votantes del PP amplió el triunfo de Rajoy](https://www.elconfidencial.com/elecciones-generales/2016-07-02/ilusion-movilizacion-electorado-pp-elecciones-26j-analisis-datos_1226947/)
 
@@ -37,5 +37,5 @@ Other classification trees that have been built to analize elections are:
 
 [The election explained by the Times Data Team](https://medium.com/digital-times/the-election-explained-by-the-times-data-team-482d3ab95f5c)
 
-[Decision tree: The Obama-Clinton divide](https://archive.nytimes.com/www.nytimes.com/imagepages/2008/04/16/us/20080416_OBAMA_GRAPHIC.html
+[Decision tree: The Obama-Clinton divide](https://archive.nytimes.com/www.nytimes.com/imagepages/2008/04/16/us/20080416_OBAMA_GRAPHIC.html)
 
