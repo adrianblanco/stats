@@ -9,6 +9,9 @@ I worked with a data scientist, [Virginia Peón](https://lab.elconfidencial.com/
 
 We worked in R with the library [rpart](https://cran.r-project.org/web/packages/rpart/rpart.pdf), that allows you to create classification trees, and [rattle](https://rattle.togaware.com/), that presents statistical and visual summaries of data. After creating the model, I refined the classification tree visualization with Illustrator in order to publish it.
 
+![alt text](tree-model-final.png "Logo Title Text 1")
+
+
 This repository contains the code and the training data to build the model. 
 
 Anyone can *steal* the code in order to build his/her own model or take it as a reference. The objective was to make the code as clean as possible to use this repo as a tool to replicate further analysis in the future.
