@@ -1,0 +1,102 @@
+---
+title: "classification-tree-model"
+author: "Adrian Blanco"
+date: "10/01/2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Here it is an example about how to create a decision tree to analyze the elections. In this case, the median age, the unemployment rate, the percentage of people who at least have a secondary school degree and the population density of each region are taken as possible factors that determine the results of the election.
+
+To analyze the election, you should repeat this analysis with different variables until you find a reasonable explanation for the election. The model makes your work easier, but does not do the whole work for you.
+
+To build a classification tree to analyze the elections, first we need to install some packages in R:
+
+```{r setup, include=FALSE}
+
+# Packages
+install.packages('rpart')
+install.packages('rattle')
+install.packages('RColorBrewer')
+install.packages('rpart.plot')
+
+```
+
+Time to load all the libraries we are going to use:
+
+```{r setup, include=FALSE}
+
+# Packages
+library('rpart')
+library('rattle')
+library('RColorBrewer')
+library('rpart.plot')
+
+```
+
+Good practices! Clear the environment workspace before continue working:
+
+```{r setup, include=FALSE}
+
+# Clear environment workspace
+rm(list=ls())
+
+```
+
+Substitute `"training-data.csv"` with the file you are using for the analysis. It should already contain the election and the sociodemographics data.
+
+```{r setup, include=FALSE}
+# Load data
+rawdata <- read.csv(file="./data/training-data.csv", header=T, sep=",")
+
+```
+
+Once you have loaded the data, take a look at it:
+
+```{r setup, include=FALSE}
+str(rawdata)
+head(rawdata)
+summary(rawdata)
+```
+
+From the data, take the variables you are interested to classify in the tree. Here it is an example. In this case, we are analyzing how important is the median age, the unemployment rate, the percentage of people who at least have a secondary school degree and the population density of each region for the final outcome of the election - the vote percentage that the winning party received in each region.
+
+```{r setup, include=FALSE}
+analysis = percentage_winning_party ~ median_age + unemployment_rate + secondary_school + population_density
+```
+
+Here, we are going to use the rpart library to classify our variables and create the decision tree model
+
+```{r setup, include=FALSE}
+
+# Load the rpart library if you have not do it already
+# library(rpart)
+
+fitall <- rpart(analysis, method="class", data=rawdata, minsplit = 10)
+
+```
+
+Let's plot and see the final outcome:
+
+```{r setup, include=FALSE}
+
+# plot tree
+plot(fitall, uniform=TRUE, main="Voter fragmentation")
+
+# shows the text in the tree
+text(fitall, use.n=TRUE, all=TRUE, cex=.8)
+
+```
+
+Finally, rattle makes the tree more readable:
+
+```{r setup, include=FALSE}
+
+# Load the rpart library if you have not do it already
+# library(rattle)
+
+fancyRpartPlot(fitall)
+```
